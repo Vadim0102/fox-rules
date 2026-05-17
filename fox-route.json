@@ -15,16 +15,6 @@
         {
             "action": "route",
             "outbound": "direct",
-            "process_name": [
-                "sing-box.exe",
-                "nekobox_core.exe",
-                "nekobox.exe",
-                "winws.exe"
-            ]
-        },
-        {
-            "action": "route",
-            "outbound": "direct",
             "ip_is_private": true
         },
         {
