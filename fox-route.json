@@ -1,0 +1,56 @@
+{
+    "name": "fox",
+    "proxy": -2,
+    "rules": [
+        {
+            "action": "hijack-dns",
+            "protocol": "dns"
+        },
+        {
+            "action": "reject",
+            "rule_set": [
+                "geosite-category-ads-all"
+            ]
+        },
+        {
+            "action": "reject",
+            "rule_set": [
+                "nekobox-adblocksingbox"
+            ]
+        },
+        {
+            "action": "route",
+            "ip_is_private": true,
+            "outbound": "direct"
+        },
+        {
+            "action": "route",
+            "outbound": "proxy",
+            "rule_set": [
+                "geoip-ru-blocked",
+                "geoip-ru-blocked-community",
+                "geosite-ru-blocked",
+                "geosite-roblox"
+            ]
+        },
+        {
+            "action": "route",
+            "outbound": "direct",
+            "rule_set": [
+                "geosite-ru-available-only-inside",
+                "geosite-ru",
+                "geosite-category-ru",
+                "geoip-ru",
+                "geosite-category-games",
+                "geosite-discord",
+                "geosite-youtube"
+            ]
+        },
+        {
+            "action": "route",
+            "outbound": "proxy"
+        }
+    ],
+    "skip_update": false,
+    "url": ""
+}
