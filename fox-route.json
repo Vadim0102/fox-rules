@@ -13,15 +13,36 @@
             ]
         },
         {
-            "action": "reject",
-            "rule_set": [
-                "nekobox-adblocksingbox"
+            "action": "route",
+            "outbound": "direct",
+            "process_name": [
+                "sing-box.exe",
+                "nekobox_core.exe",
+                "nekobox.exe",
+                "winws.exe"
             ]
         },
         {
             "action": "route",
-            "ip_is_private": true,
-            "outbound": "direct"
+            "outbound": "direct",
+            "ip_is_private": true
+        },
+        {
+            "action": "route",
+            "outbound": "direct",
+            "domain_suffix": [
+                ".local",
+                ".localhost",
+                ".lan"
+            ]
+        },
+        {
+            "action": "route",
+            "outbound": "direct",
+            "rule_set": [
+                "geosite-youtube",
+                "geosite-discord"
+            ]
         },
         {
             "action": "route",
@@ -41,9 +62,7 @@
                 "geosite-ru",
                 "geosite-category-ru",
                 "geoip-ru",
-                "geosite-category-games",
-                "geosite-discord",
-                "geosite-youtube"
+                "geosite-category-games"
             ]
         },
         {
