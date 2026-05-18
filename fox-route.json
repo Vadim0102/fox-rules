@@ -13,18 +13,31 @@
             ]
         },
         {
-            "action": "route",
-            "outbound": "direct",
-            "ip_is_private": true
+            "action": "reject",
+            "rule_set": [
+                "nekobox-adblocksingbox"
+            ]
         },
         {
             "action": "route",
             "outbound": "direct",
+            "process_name": [
+                "cs2.exe"
+            ]
+        },
+        {
+            "action": "route",
+            "ip_is_private": true,
+            "outbound": "direct"
+        },
+        {
+            "action": "route",
             "domain_suffix": [
                 ".local",
                 ".localhost",
                 ".lan"
-            ]
+            ],
+            "outbound": "direct"
         },
         {
             "action": "route",
